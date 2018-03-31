@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
++  <!-- REACT DOM LIBRARY -->
++  <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+   <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<title>PersonalID</title>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+
+    function PersonalID(){
+      var personalIDStyle = {
+        height: 400,
+        width: 300, 
+        padding: 0,
+        margin: 100,
+        backgroundColor: "#fff",
+        WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+        filter: "drop-shadow(0px 0px 5px #555)" 
+      }
+      return(
+        <div style={personalIDStyle}>
+        	<Avatar/>
+        	<UserName/>
+        	<Social/>
+        </div>
+      );
+    } 
+
+    function Avatar(){
+     var avatarStyle = {
+        padding: 50, 
+        width: 200,
+        height: 150,
+        borderRadius: '50%'
+      }
+     return(
+      <img style={avatarStyle} src='https://thumb1.shutterstock.com/mosaic_250/1306012/476340928/stock-photo-woman-portrait-natural-beautiful-476340928.jpg' alt="Logo"/>
+     );
+    }
+
+    function UserName(){
+     var userNameStyle = {
+         textAlign: 'center'
+      }
+      return(
+       <h1 style={userNameStyle}>Personal Name</h1>
+      );
+    }
+
+    function Social() {
+      var socialStyle = {
+          textAlign: 'center'
+      }
+      return(
+        <div style={socialStyle}>
+        	<Like/>
+        	<Share/>
+        	<Add/>
+        </div>
+      );
+    }
+    
+    var iconStyle = {
+      margin: 10
+    }
+
+    function Like(){
+      return(
+          <i className="fa fa-thumbs-up" aria-hidden="true" style={iconStyle}></i>
+      );
+    }
+    
+    function Share(){
+      return(
+        <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
+      );
+    }
+
+    function Add(){
+      return(
+          <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
+      );
+    }
+
+
+	var destination =  document.getElementById('app');
+
+	ReactDOM.render (
+	<PersonalID/>,
+       destination
+	);
+</script>
+</body>
+</html>
